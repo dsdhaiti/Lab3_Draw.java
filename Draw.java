@@ -23,6 +23,9 @@ public class Draw extends Frame implements ActionListener, ItemListener {
     Button circle;
     Button roundRec;
     Button threeDRec;
+    Button lines;
+    Button squares;
+    Button ovals;
 
     // Color choice box
     Choice colorChoice;
@@ -33,29 +36,47 @@ public class Draw extends Frame implements ActionListener, ItemListener {
     /**
      * Constructor
      */
+    
 	public Draw() {
 	    super("Java Draw");
         setLayout(new BorderLayout());
 
         // create panel for controls
-        Panel topPanel = new Panel(new GridLayout(2, 1));
+        Panel topPanel = new Panel(new GridLayout(3, 2));
         add(topPanel, BorderLayout.NORTH);
 
         // create button control
         Panel buttonPanel = new Panel(new FlowLayout(FlowLayout.LEFT));
         topPanel.add(buttonPanel);
 
-        circle = new Button("Circle");
-        buttonPanel.add(circle);
-        roundRec = new Button("Rounded Rectangle");
-        buttonPanel.add(roundRec);
-        threeDRec = new Button("3D Rectangle");
-        buttonPanel.add(threeDRec);
+	        circle = new Button("Circle");
+	        buttonPanel.add(circle);
+	        
+	        roundRec = new Button("Rounded Rectangle");
+	        buttonPanel.add(roundRec);
+	        
+	        threeDRec = new Button("3D Rectangle");
+	        buttonPanel.add(threeDRec);
+	     
+	     Panel buttonPanel1 = new Panel(new FlowLayout(FlowLayout.LEFT));
+	      topPanel.add(buttonPanel1);
+    
+	     lines = new Button("Lines");
+	     buttonPanel1. add(lines);
+	     
+	     squares = new Button("Squares");
+	     buttonPanel1.add(squares);
+	     
+	     ovals = new Button("Oval");
+	     buttonPanel1.add(ovals);
 
         // add button listener
         circle.addActionListener(this);
         roundRec.addActionListener(this);
         threeDRec.addActionListener(this);
+        lines.addActionListener(this);
+        squares.addActionListener(this);
+        ovals.addActionListener(this);
 
         // create panel for color choices
         Panel colorPanel = new Panel(new FlowLayout(FlowLayout.LEFT));
