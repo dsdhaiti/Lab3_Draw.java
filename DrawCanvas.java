@@ -16,6 +16,10 @@ public class DrawCanvas extends Canvas implements MouseListener,
     public static final int CIRCLE = 1;
     public static final int ROUNDED_RECTANGLE = 2;
     public static final int RECTANGLE_3D = 3;
+    public static final int LINES = 4;
+    public static final int SQUARES = 5;
+    public static final int OVALS = 6; 
+    
 
     // Coordinates of points to draw
     private int x1, y1, x2, y2;
@@ -25,7 +29,8 @@ public class DrawCanvas extends Canvas implements MouseListener,
     /**
      * Method to set the shape
      */
-    public void setShape(int shape) {
+    public void setShape(int shape) 
+    {
         this.shape = shape;
     }
 
@@ -34,14 +39,16 @@ public class DrawCanvas extends Canvas implements MouseListener,
     /**
      * Method to set filled color
      */
-    public void setFilledColor(Color color) {
+    public void setFilledColor(Color color)
+    {
         filledColor = color;
     }
 
     /**
      * Constructor
      */
-	public DrawCanvas() {
+	public DrawCanvas()
+	{
 	    addMouseListener(this);
 	    addMouseMotionListener(this);
 	} // end of constructor
@@ -49,7 +56,8 @@ public class DrawCanvas extends Canvas implements MouseListener,
     /**
      * painting the component
      */
-    public void paint(Graphics g) {
+    public void paint(Graphics g)
+    {
 
         // the drawing area
         int x, y, width, height;
@@ -84,6 +92,16 @@ public class DrawCanvas extends Canvas implements MouseListener,
                 else
                     g.fill3DRect(x, y, width, height, true);
                 break;
+           // case LINES :
+            //	if(filledColor == null)
+            	//k	g.drawLine(x, y, width, height);
+            case OVALS :
+            	if(filledColor == null)
+            		g.drawOval(x, y, width, height);
+            	else
+            		g.fillOval(x, y, width, height);
+            	
+           
         }
     }
 

@@ -61,19 +61,20 @@ public class Draw extends Frame implements ActionListener, ItemListener {
 	     Panel buttonPanel1 = new Panel(new FlowLayout(FlowLayout.LEFT));
 	      topPanel.add(buttonPanel1);
     
-	     lines = new Button("Lines");
-	     buttonPanel1. add(lines);
-	     
-	     squares = new Button("Squares");
-	     buttonPanel1.add(squares);
-	     
-	     ovals = new Button("Oval");
-	     buttonPanel1.add(ovals);
+		     lines = new Button("Lines");
+		     buttonPanel1. add(lines);
+		     
+		     squares = new Button("Squares");
+		     buttonPanel1.add(squares);
+		     
+		     ovals = new Button("Oval");
+		     buttonPanel1.add(ovals);
 
         // add button listener
         circle.addActionListener(this);
         roundRec.addActionListener(this);
         threeDRec.addActionListener(this);
+        
         lines.addActionListener(this);
         squares.addActionListener(this);
         ovals.addActionListener(this);
@@ -84,9 +85,12 @@ public class Draw extends Frame implements ActionListener, ItemListener {
         Label label = new Label("Filled Color:");
         colorPanel.add(label);
         colorChoice = new Choice();
-        for(int i=0; i<COLOR_NAMES.length; i++) {
-            colorChoice.add(COLOR_NAMES[i]);
-        }
+        
+	        for(int i=0; i<COLOR_NAMES.length; i++)
+	        {
+	            colorChoice.add(COLOR_NAMES[i]);
+	        }
+	        
         colorPanel.add(colorChoice);
         colorChoice.addItemListener(this);
 
